@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    background-image: url(./background.webp);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Top bar */
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(20, 20, 30, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.topbar .title {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.topbar #timeDisplay {
+    color: white;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* Draggable windows */
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 32px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    text-align: center;
+    color: white;
+    max-width: 360px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Drag handle: sits inside the window, in line with the close button */
+.drag-handle {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    width: 18px;
+    height: 18px;
+    cursor: grab;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+/* Close button: small red circle in the top-left corner of the window */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 14px;
+    height: 14px;
+    background-color: #ff5f57;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #ff7b74;
+}
+
+.logo {
+    max-width: 100px;
+    margin-bottom: 12px;
+}
+
+.window h1 {
+    margin-bottom: 8px;
+}
+
+.window p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Deskbar */
+.deskbar {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    padding: 10px 14px;
+    background-color: rgba(20, 20, 30, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    z-index: 10;
+}
+
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease;
+}
+
+.app-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.app-icon .icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}

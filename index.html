@@ -1,7 +1,78 @@
 <!DOCTYPE html>
-
 <html>
-    <body>
-        <p>Hellow world!</p>
-    </body>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="icon.webp">
+    <title>HackClub OS</title>
+</head>
+<body>
+    <div class="topbar">
+        <div class="brand">
+            <img class="brand-icon" src="icon.webp">
+            <p class="title">HackClubOS</p>
+        </div>
+        <p id="timeDisplay">6/21/2023 3:41 PM</p>
+    </div>
+
+    <!-- Welcome window (open by default) -->
+    <div id="welcome" class="window">
+        <img id="welcomeheader" class="drag-handle" src="draghandle.png" alt="drag handle">
+        <div class="close-btn"></div>
+
+        <img class="logo" src="logo.png" alt="HackClub Logo">
+        <h1>HackClubOS</h1>
+        <p>HackClub is an awesome organization for highschoolers!</p>
+    </div>
+
+
+
+    <!-- About window -->
+    <div id="about" class="window" style="display:none; top:38%; left:38%;">
+        <img id="abouthd" class="drag-handle" src="draghandle.png" alt="drag handle">
+        <div class="close-btn"></div>
+
+        <h1>About</h1>
+        <p>HackClub helps high schoolers learn to code by building real projects with a supportive community of hackers worldwide.</p>
+    </div>
+
+    <!-- Projects window -->
+    <div id="projects" class="window" style="display:none; top:58%; left:60%;">
+        <img id="projectshd" class="drag-handle" src="draghandle.png" alt="drag handle">
+        <div class="close-btn"></div>
+
+        <h1>Projects</h1>
+        <p>Check out the hack nights, workshops, and hackathons happening at your club.</p>
+    </div>
+
+    <!-- Contact window -->
+    <div id="contact" class="window" style="display:none; top:65%; left:35%;">
+        <img id="contacthd" class="drag-handle" src="draghandle.png" alt="drag handle">
+        <div class="close-btn"></div>
+
+        <h1>Contact</h1>
+        <p>Want to get involved? Reach out to your local HackClub leader!</p>
+    </div>
+
+    <!-- Deskbar / taskbar with app launchers -->
+    <div class="deskbar">
+        <div class="app-icon open-btn" data-target="welcome">
+            <img class="icon" src="welcome.webp">
+            <span>Welcome</span>
+        </div>
+        <div class="app-icon open-btn" data-target="about">
+            <img class="icon" src="finder.webp">
+            <span>About</span>
+        </div>
+        <div class="app-icon open-btn" data-target="projects">
+            <img class="icon" src="folder.webp">
+            <span>Projects</span>
+        </div>
+        <div class="app-icon open-btn" data-target="contact">
+            <img class="icon" src="mail.png">
+            <span>Contact</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
